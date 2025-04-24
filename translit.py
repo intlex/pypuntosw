@@ -222,8 +222,9 @@ def pause_handler(event):
         print(f"Произошла ошибка: {e}")
 
 if __name__ == "__main__":
+    # измените на свои предпочтительные сочетания клавиш
     keyboard.on_press_key('pause', pause_handler)
-    keyboard.wait('esc')
+    keyboard.wait('crtl+alt+esc')
     exit()
     
     input_text = pyclip.paste(text=True)
