@@ -1,4 +1,3 @@
-#!/home/intlex/GAMES/Python/bin/python
 import difflib
 import re
 import pymorphy3
@@ -10,7 +9,8 @@ try:
     rus_dict = enchant.Dict("ru_RU")
 except Exception as e:
     raise Exception(f"{e}")
-    
+
+english_letters = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
 # Таблицы соответствия символов.
 RU_TO_EN = {
     'й': 'q', 'ц': 'w', 'у': 'e', 'к': 'r', 'е': 't', 'н': 'y', 'г': 'u', 'ш': 'i', 'щ': 'o', 'з': 'p', 'х': '[', 'ъ': ']', 
@@ -85,10 +85,7 @@ def is_word_recognized_advanced(word: str, lang: str, similarity_threshold=0.85)
         # Если в фрагменте есть буквы, обрабатываем отдельно
         if re.search(r'[A-Za-zА-Яа-яЁё]', frag.lower()):
             # Пробуем исправить фрагмент
-            if not recognized_any:
-                recognized, corrected, is_first = correct_fragment(frag, lang, similarity_threshold)
-#            else:
-#                corrected = frag
+            recognized, corrected, is_first = correct_fragment(frag, lang, similarity_threshold)
             weight = weight + (10 if is_first else 0)
             weight = weight + 1 if recognized else 0
             #print(f"{lang} {recognized}, {corrected}, {is_first}")
@@ -181,7 +178,6 @@ def process_text(input_text: str) -> str:
     #    words.append(process_pair(word_pairs[i]))
     # Подсчитаем сколько слов каждого алфавита, чтобы определить язык всей строки
     # todo: надо бы исключать из подсчета числа
-    english_letters = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
     words_en = 0
     words_ru = 0        
     #print(words)
@@ -220,9 +216,10 @@ if __name__ == "__main__":
     keyboard.on_press_key('pause', pause_handler)
     keyboard.wait('esc')
     exit()
+    
     input_text = pyclip.paste(text=True)
     #'tcnm rjl c nfrbvb bvgjhnfvb? шьфпуышяу ,eltn kb jy hf,jnfnm gjl fylhjbl ХсдшзЪ'
-    #input_text = "<kjr123 шьфпу_ышяу привет fryiend ашдуюшьп ,ehfnbyj"
+    #"<kjr123 шьфпу_ышяу привет fryiend ашдуюшьп ,ehfnbyj"
     result_text = process_text(input_text)
     pyclip.copy(result_text)
     print("Результат:", result_text)
