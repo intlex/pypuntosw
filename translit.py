@@ -45,16 +45,19 @@ def correct_fragment(fragment: str, lang: str, similarity_threshold) -> (bool, s
     lw = fragment.lower()
     # Если фрагмент напрямую распознан
     # или Собираем варианты исправления
-    if lang == 'en':
-        if eng_dict.check(lw):
-            return True, fragment, True
-        else:
-            suggestions = eng_dict.suggest(lw)
-    else:
-        if rus_dict.check(lw):
-            return True, fragment, True
-        else:
-            suggestions = rus_dict.suggest(lw)
+    match lang:
+        case 'en':
+            if eng_dict.check(lw):
+                return True, fragment, True
+            else:
+                suggestions = eng_dict.suggest(lw)
+        case 'ru':
+            if rus_dict.check(lw):
+                return True, fragment, True
+            else:
+                suggestions = rus_dict.suggest(lw)
+        case _:
+            return False, fragment, False
     if not suggestions:
         return False, fragment, False  # Если вариантов нет, возвращаем исходный фрагмент
     best_suggestion = None
