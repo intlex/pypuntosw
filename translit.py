@@ -3,10 +3,12 @@ import re
 import pymorphy3
 import enchant
 import pyclip
+#import langid
 # Инициализация словарей Enchant для английского и русского языков
 try:
     eng_dict = enchant.Dict("en_US")
     rus_dict = enchant.Dict("ru_RU")
+    #langid.set_languages(['ru', 'en'])
 except Exception as e:
     raise Exception(f"{e}")
 
@@ -130,6 +132,10 @@ def process_text(input_text: str) -> str:
     words = input_text.split()
     word_pairs = []
     for word in words:
+        #lang, confidence = langid.classify(word)
+        #match land:
+        #    case 'en':
+        #    case 'ru':
         if re.match(r'[а-яА-Я]', word):
             word_r = word
             check_r, weight_r = process_word(word_r, 'ru')
