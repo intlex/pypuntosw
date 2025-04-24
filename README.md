@@ -16,9 +16,9 @@ wget https://github.com/intlex/pypuntosw/raw/refs/heads/main/translit.py
 * Запустить скрипт после установки всех зависимостей
   `python3 translit.py`
 * Выделить текст, например:
-  `tcnm rjl c nfrbvb bvgjhnfvb? шьфпуышяу ,eltn kb jy hf,jnfnm gjl fylhjbl ХсдшзЪ`
+  `если rjl c nfrbvb bvgjhnfvb? шьфпуышяу ,eltn kb jy hf,jnfnm gjl fylhjbl ХсдшзЪ`
 * Нажать кнопку `Pause`, текст будет заменен на:
-  `есть код c такими импортами, imagesize будет ли он работать под андроид {clip}`
+  `если код c такими импортами, imagesize будет ли он работать под андроид {clip}`
 * Нажать сочетание клавиш `Ctrl+Alt+Esc` для завершения работы скрипта.
 
 # Notice
