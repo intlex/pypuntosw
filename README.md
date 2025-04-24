@@ -7,7 +7,9 @@
 ```
 pip install pyenchant pymorphy3 pymorphy3-dicts-ru
 apt-get install -y libenchant-2-2 hunspell-ru
+wget https://github.com/intlex/pypuntosw/raw/refs/heads/main/translit.py
 ```
+При необходимости измените в файле `translit.py` коды клавиш для `keyboard.wail` и `keyboard.on_press_key` на предпочтительные.
 
 # Usage
 
@@ -17,6 +19,7 @@ apt-get install -y libenchant-2-2 hunspell-ru
   `tcnm rjl c nfrbvb bvgjhnfvb? шьфпуышяу ,eltn kb jy hf,jnfnm gjl fylhjbl ХсдшзЪ`
 * Нажать кнопку `Pause`, текст будет заменен на:
   `есть код c такими импортами, imagesize будет ли он работать под андроид {clip}`
+* Нажать сочетание клавиш `Ctrl+Alt+Esc` для завершения работы скрипта.
 
 # Notice
 
