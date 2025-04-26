@@ -5,11 +5,11 @@
 
 # Installation
 ```
-pip install pyenchant pymorphy3 pymorphy3-dicts-ru
+pip install pyenchant pymorphy3 pymorphy3-dicts-ru pynput
 apt-get install -y libenchant-2-2 hunspell-ru
 wget https://github.com/intlex/pypuntosw/raw/refs/heads/main/translit.py
 ```
-При необходимости измените в файле `translit.py` коды клавиш для `keyboard.wait` и `keyboard.on_press_key` на предпочтительные.
+При необходимости измените в файле `translit.py` коды клавиш у `GlobalHotKeys` на предпочтительные.
 
 # Usage
 
@@ -19,7 +19,7 @@ wget https://github.com/intlex/pypuntosw/raw/refs/heads/main/translit.py
   `если rjl c nfrbvb bvgjhnfvb? шьфпуышяу ,eltn kb jy hf,jnfnm gjl fylhjbl ХсдшзЪ <kjr123 привет fryiend`
 * Нажать кнопку `Pause`, текст будет заменен на:
   `если код c такими импортами, imagesize будет ли он работать под андроид {clip} Блок123 привет fryiend`
-* Нажать сочетание клавиш `Ctrl+Alt+Esc` для завершения работы скрипта.
+* Нажать сочетание клавиш `Shift + Pause` для для принудительной смены раскладки.
 
 # Notice
 
