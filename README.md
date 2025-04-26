@@ -10,6 +10,7 @@ apt-get install -y libenchant-2-2 hunspell-ru
 wget https://github.com/intlex/pypuntosw/raw/refs/heads/main/translit.py
 ```
 Чтобы не устанавливать ненужные зависимости, лучше всего скачать `pynput` отдельно https://github.com/moses-palmer/pynput
+
 При необходимости измените в файле `translit.py` коды клавиш у `GlobalHotKeys` на предпочтительные.
 
 # Usage
